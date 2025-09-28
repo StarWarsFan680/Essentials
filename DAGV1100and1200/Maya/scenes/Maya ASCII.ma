@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Maya ASCII.ma
-//Last modified: Sat, Sep 27, 2025 09:19:20 PM
+//Last modified: Sat, Sep 27, 2025 09:46:28 PM
 //Codeset: 1252
 file -rdi 1 -ns "Unit4_CurvesLab" -rfn "Unit4_CurvesLabRN" -op "v=0;" -typ "mayaAscii"
 		 "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Unit4_CurvesLab.ma";
@@ -18,19 +18,19 @@ fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26100)";
-fileInfo "UUID" "0F456584-4610-AAED-667D-048A8B016D17";
+fileInfo "UUID" "08854DF3-4DF2-E64E-9247-3586DE5AEEA9";
 createNode transform -s -n "persp";
 	rename -uid "DC51DC54-4290-168E-1748-8A998F9EE01A";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 34.625221154039366 29.820928364391175 31.557054436456802 ;
-	setAttr ".r" -type "double3" -24.043084094520502 47.494729356483901 2.353671942425774e-15 ;
+	setAttr ".t" -type "double3" 34.668681610568093 41.623756529403266 19.024698613104356 ;
+	setAttr ".r" -type "double3" -39.643084094520994 61.09472935648499 0 ;
 	setAttr ".rp" -type "double3" -8.8817841970012523e-16 -2.2204460492503131e-16 3.5527136788005009e-15 ;
 	setAttr ".rpt" -type "double3" 1.832937287903187e-13 3.1389841785267292e-13 8.7431142095918035e-14 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "BB0FBC8F-4E66-09DA-A83C-8A99FF9E4758";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 51.187623108084864;
+	setAttr ".coi" 51.18762310809084;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
