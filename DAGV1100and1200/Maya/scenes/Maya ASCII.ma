@@ -1,6 +1,6 @@
 //Maya ASCII 2026 scene
 //Name: Maya ASCII.ma
-//Last modified: Tue, Oct 07, 2025 11:02:32 PM
+//Last modified: Tue, Oct 14, 2025 08:22:49 PM
 //Codeset: 1252
 file -rdi 1 -ns "Unit4_CurvesLab" -dr 1 -rfn "Unit4_CurvesLabRN" -op "v=0;" 
 		-typ "mayaAscii" "C:/GitHub/Essentials/DAGV1100and1200/Maya//scenes/Unit4_CurvesLab.ma";
@@ -16,17 +16,18 @@ requires maya "2026";
 requires "stereoCamera" "10.0";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiImagerDenoiserOidn"
 		 "mtoa" "5.5.3";
+requires "stereoCamera" "10.0";
 currentUnit -l centimeter -a degree -t film;
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2026";
 fileInfo "version" "2026";
 fileInfo "cutIdentifier" "202507081222-4d6919b75c";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 26100)";
-fileInfo "UUID" "2A3851DD-422E-8005-6A30-E097A4B82DB6";
+fileInfo "UUID" "D81265AD-4208-1A1C-46BE-A2950F597F5B";
 createNode transform -s -n "persp";
 	rename -uid "DC51DC54-4290-168E-1748-8A998F9EE01A";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 52.109893124265625 39.971575537460211 26.70853366475589 ;
+	setAttr ".t" -type "double3" 21.97864032968549 13.665514396767218 16.840172564560515 ;
 	setAttr ".r" -type "double3" -30.043084094524541 60.694729356485588 -6.4980536152991503e-15 ;
 	setAttr ".rp" -type "double3" -8.8817841970012523e-16 -2.2204460492503131e-16 3.5527136788005009e-15 ;
 	setAttr ".rpt" -type "double3" 1.832937287903187e-13 3.1389841785267292e-13 8.7431142095918035e-14 ;
@@ -34,7 +35,7 @@ createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "BB0FBC8F-4E66-09DA-A83C-8A99FF9E4758";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 69.997841653858103;
+	setAttr ".coi" 29.901339358018721;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -4153,15 +4154,15 @@ createNode transform -n "pot_and_flower";
 	setAttr ".r" -type "double3" 0 -4.3766719002227932 0 ;
 	setAttr ".s" -type "double3" 0.49816066961613298 0.49816066961613298 0.49816066961613298 ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "2D8F35A8-4ABB-C253-A98C-1BBAE90C325F";
+	rename -uid "FC212E2F-4FFF-711D-716B-189F90F959F6";
 	setAttr -s 3 ".lnk";
 	setAttr -s 3 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "4878A4F8-4144-C5AD-A1E8-2D80565F9C34";
+	rename -uid "7431DBCA-4C7C-74CA-868C-6285B9AE4BD5";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "D0B9E26C-4438-C21A-9A7D-88AA9ED5D0FE";
+	rename -uid "55347672-421E-153B-B737-62869B788196";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "1270994B-4332-F95A-93B8-C4AA7DED6ACF";
+	rename -uid "B24ADB8B-4744-9202-B164-2E922D247C49";
 	setAttr ".cdl" 5;
 	setAttr -s 6 ".dli[1:5]"  2 1 3 4 5;
 	setAttr -s 3 ".dli";
@@ -4169,7 +4170,7 @@ createNode displayLayer -n "defaultLayer";
 	rename -uid "AC39EB08-40E0-6817-53F3-4C985158EF77";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "B3FE2A95-4344-5D56-8D62-588C0260047D";
+	rename -uid "70726EB5-4DE9-9051-1143-63B41F9273B6";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "EBBF4FF5-412C-BC50-66F8-2197BAA880CC";
 	setAttr ".g" yes;
@@ -4311,8 +4312,8 @@ createNode reference -n "plantPotRN";
 	rename -uid "459F502B-4FDD-5124-F37A-B1A61E9B3773";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"plantPotRN"
-		"plantPot:Unit4_CurvesLabRN" 0
 		"plantPotRN" 0
+		"plantPot:Unit4_CurvesLabRN" 0
 		"plantPotRN" 3
 		0 "|plantPot:Flower" "|pot_and_flower" "-s -r "
 		2 "|plantPot:group1" "scale" " -type \"double3\" 0.1814633099449949 0.1814633099449949 0.1814633099449949"
@@ -4376,8 +4377,6 @@ select -ne :defaultColorMgtGlobals;
 select -ne :hardwareRenderGlobals;
 	setAttr ".ctrs" 256;
 	setAttr ".btrs" 512;
-select -ne :ikSystem;
-	setAttr -s 4 ".sol";
 connectAttr "groupId38.id" "|ChairMesh|ChairMesh.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "|ChairMesh|ChairMesh.iog.og[0].gco";
 connectAttr "groupId12.id" "|ChairMesh|ChairMesh.ciog.cog[0].cgid";
